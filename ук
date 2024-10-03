@@ -1,0 +1,140 @@
+//задание 1
+using System;
+public class Program
+{
+    public static int f(int x)
+    {
+        if (x % 2 != 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return x / 2;
+        }
+    }
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Введите значение : ");
+        int x = Convert.ToInt32(Console.ReadLine());
+        int result = f(x);
+        Console.WriteLine(result);
+    }
+}
+
+//задание 2
+using System;
+public class Program
+{
+    public static int f(int x)
+    {
+        if (x % 5 == 0)
+        {
+            return x / 5;
+        }
+        else
+        {
+            return x + 1;
+        }
+    }
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Введите значение : ");
+        int x = Convert.ToInt32(Console.ReadLine());
+        int result = f(x);
+        Console.WriteLine(result);
+    }
+}
+
+
+//задание 3
+using System;
+
+class Program
+{
+    static int f(int x)
+    {
+       
+        if (x >= 10 && x <= 99)
+        {
+            int tens = x / 10; 
+            int units = x % 10; 
+            return units * 10 + tens; 
+        }
+        return x;
+    }
+
+    public static void Main(string[] args)
+    {
+        Console.Write("Введите число: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        int result = f(x);
+        Console.WriteLine(result);
+    }
+}
+
+
+//задание 4
+using System;
+
+class Program
+{
+    public static int f(int x)
+    {
+
+        int hundreds = x / 100;
+        int tens = (x / 10) % 10;
+        int units = x % 10;
+
+
+        int a = units * 100 + tens * 10 + hundreds;
+        return a;
+    }
+    public static void Main()
+    {
+        Console.Write("Введите трехзначное число: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+
+        if (x < 100 || x > 999)
+        {
+            Console.WriteLine("Ошибка: Введите корректное трехзначное число.");
+        }
+        else
+        {
+            int result = f(x);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+//задание 5
+using System;
+
+public class Program
+{
+    public static double f(double a, double b)
+    {
+        return Math.Sqrt(a * a + b * b);
+    }
+
+    public static void Main(string[] args)
+    {
+        Console.Write("Введите длину стороны AB: ");
+        double AB = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите длину стороны AC: ");
+        double AC = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Введите длину стороны DC: ");
+        double DC = Convert.ToDouble(Console.ReadLine());
+
+        
+        double BC = f(AB, AC);
+
+        double perimeter = AB + BC + DC + AC;
+
+      
+        Console.WriteLine($"Периметр фигуры ABCD: {perimeter}");
+    }
+}
